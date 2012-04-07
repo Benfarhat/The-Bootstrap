@@ -7,7 +7,7 @@
  * @since		1.0.0	- 05.02.2012
  */
 ?>
-<section id="secondary" class="widget-area span4" role="complementary">
+<section id="secondary" class="widget-area pull-left span4" role="complementary">
 	<?php if ( ! dynamic_sidebar( 'main' ) ) : ?>
 
 		<aside id="archives" class="widget well">

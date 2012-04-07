@@ -8,11 +8,6 @@
  */
 
 
-if ( ! isset( $content_width ) ) {
-	$content_width = 770;
-}
-
-
 if ( ! function_exists( 'the_bootstrap_setup' ) ):
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -23,11 +18,20 @@ if ( ! function_exists( 'the_bootstrap_setup' ) ):
  * @return	void
  */
 function the_bootstrap_setup() {
+
+	if ( ! isset( $content_width ) ) {
+		$content_width = 770;
+	}
 	
 	load_theme_textdomain( 'the-bootstrap', get_template_directory() . '/lang' );
 	
 	add_theme_support( 'automatic-feed-links' );
 
+	/**
+	 * Custom Theme Options
+	 */
+	require_once ( get_template_directory() . '/inc/theme-options.php' );
+	
 	/**
 	 * Implement the Custom Header feature
 	 */
@@ -46,19 +50,7 @@ function the_bootstrap_setup() {
 
 	add_custom_background();
 	
-        /**
-         * Including three menu (header-menu, primary ans footer-menu).
-		 * Primary is wrapping in a navbar containing div (wich support responsive variation)
-		 * Header_menu and Footer-menu are inside pills dropdown menu
-		 * @since	1.2.2 - 07.04.2012
-         * @see http://codex.wordpress.org/Function_Reference/register_nav_menus
-         */
-	register_nav_menus(array(
-			'header-menu'  	=> __('Header Menu', 'the-bootstrap'),
-			'primary'				=> __('Main Navigation', 'the-bootstrap'),			
-			'footer-menu' 		=> __('Footer Menu', 'the-bootstrap')
-		)
-	);
+	register_nav_menu( 'primary', __( 'Main Navigation', 'the-bootstrap' ) );
 	
 } // the_bootstrap_setup
 endif;
@@ -112,7 +104,7 @@ function the_bootstrap_register_scripts_styles() {
 	if ( ! is_admin() ) {
 		$theme_data = get_theme_data( get_template_directory() . '/style.css' );
 		$suffix = ( defined('SCRIPT_DEBUG') AND SCRIPT_DEBUG ) ? '' : '.min';
-			
+		$style=the_bootstrap_get_theme_options()->custom_style_site;	
 		/**
 		 * Scripts
 		 */
@@ -135,19 +127,41 @@ function the_bootstrap_register_scripts_styles() {
 		/**
 		 * Styles
 		 */
-		wp_register_style(
-			'tw-bootstrap',
-			get_template_directory_uri() . "/css/bootstrap{$suffix}.css",
-			array(),
-			'2.0.2'
-		);
-		
-		wp_register_style(
-			'the-bootstrap',
-			get_template_directory_uri() . "/style{$suffix}.css",
-			array('tw-bootstrap'),
-			$theme_data['Version']
-		);
+		 if($style=="bootstrap") 
+			 {
+						$link_style="/css/bootstrap{$suffix}.css";
+						wp_register_style(
+						'tw-bootstrap',
+						
+						get_template_directory_uri() .$link_style ,
+						array(),
+						'2.0.2'
+					);
+					
+						wp_register_style(
+						'the-bootstrap',
+						get_template_directory_uri() . "/style{$suffix}.css",
+						array('tw-bootstrap'),
+						$theme_data['Version']
+					);
+			
+			 }
+		 else
+			{
+			
+				$link_style="/css/".$style."/bootstrap{$suffix}.css";
+				wp_register_style(
+					'tw-bootstrap',
+					
+					get_template_directory_uri() .$link_style ,
+					array(),
+					'2.0.2'
+				);
+			
+			 }
+		 
+
+
 	}
 }
 add_action( 'init', 'the_bootstrap_register_scripts_styles' );

@@ -148,11 +148,12 @@ function the_bootstrap_get_theme_options() {
  */
 function the_bootstrap_get_default_theme_options() {
 	$default_theme_options	=	array(
-		'theme_layout'	=>	'content-sidebar',
-		'navbar_site_name'	=>	false,
+		'theme_layout'				=>	'content-sidebar',
+		'navbar_site_name'		=>	false,
 		'navbar_site_name_content'	=>	'Your custom site name or slogan',
-		'custom_style_site'	=>	'bootstrap',
-		'navbar_searchform'	=>	true
+		'custom_style_site'			=>	'bootstrap',
+		'custom_bg_style_site'	=>	'#ffffff',
+		'navbar_searchform'		=>	true
 	);
 
 	return apply_filters( 'the_bootstrap_default_theme_options', $default_theme_options );
@@ -216,7 +217,20 @@ function the_bootstrap_settings_field_layout() {
  */
 function the_bootstrap_settings_field_navbar() {
 
-	$bootstrap_style=array("bootstrap","amelia","cerulean","cyborg","journal","readable","simplex","slate","spacelab","spruce","superhero","united");
+	$bootstrap_style=array(
+											array("name"=>"bootstrap","background_color"=>"#ffffff"),
+											array("name"=>"amelia","background_color"=>"#003f4d"),
+											array("name"=>"cerulean","background_color"=>"#ffffff"),
+											array("name"=>"cyborg","background_color"=>"#060606"),
+											array("name"=>"journal","background_color"=>"#fcfbfd"),
+											array("name"=>"readable","background_color"=>"#fdfdfa"),
+											array("name"=>"simplex","background_color"=>"#ededed"),
+											array("name"=>"slate","background_color"=>"#272b30"),
+											array("name"=>"spacelab","background_color"=>"#ffffff"),
+											array("name"=>"spruce","background_color"=>"#aead8e"),
+											array("name"=>"superhero","background_color"=>"#2a333c"),
+											array("name"=>"united","background_color"=>"#ffffff")
+											);
 	$current_style	=	the_bootstrap_get_theme_options()->custom_style_site;
 
 	?>
@@ -240,9 +254,16 @@ function the_bootstrap_settings_field_navbar() {
 	
 	<select name="the_bootstrap_theme_options[custom_style_site]">   
 		<?php foreach($bootstrap_style as $val){  ?>  
-		<option value="<?php echo $val; ?>" <?php if($current_style==$val) echo "selected";?>><?php echo $val; ?></option>	           
+		<option value="<?php echo $val['name']; ?>" <?php if($current_style==$val['name']) {echo "selected";$st=$val['name'];$bg=$val['background_color'];}?>><?php echo $val['name']." ["; _e('Recommended background-color:','thee_bootstrap');echo $val['background_color']."]";?></option>	           
 		<?php } ?>
 	</select>
+	<br /><hr />
+	<?php
+	 printf( __( 'Current style: %1$s, <br /> Recommended background color: %2$s', 'the-bootstrap' ), $st,$bg ); 
+
+
+
+	?>
 	</div>
 	<?php
 }
@@ -297,15 +318,42 @@ function the_bootstrap_theme_options_render_page() {
  * @return	void
  */
 function the_bootstrap_theme_options_validate( $input ) {
+$bootstrap_style=array(
+											array("name"=>"bootstrap","background_color"=>"#ffffff"),
+											array("name"=>"amelia","background_color"=>"#003f4d"),
+											array("name"=>"cerulean","background_color"=>"#ffffff"),
+											array("name"=>"cyborg","background_color"=>"#060606"),
+											array("name"=>"journal","background_color"=>"#fcfbfd"),
+											array("name"=>"readable","background_color"=>"#fdfdfa"),
+											array("name"=>"simplex","background_color"=>"#ededed"),
+											array("name"=>"slate","background_color"=>"#272b30"),
+											array("name"=>"spacelab","background_color"=>"#ffffff"),
+											array("name"=>"spruce","background_color"=>"#aead8e"),
+											array("name"=>"superhero","background_color"=>"#2a333c"),
+											array("name"=>"united","background_color"=>"#ffffff")
+											);
 	$output = $defaults = the_bootstrap_get_default_theme_options();
 
 	if ( isset( $input['theme_layout'] ) AND array_key_exists( $input['theme_layout'], the_bootstrap_layouts() ) )
 		$output['theme_layout']	=	$input['theme_layout'];
+		
+		
+		
 	
 	$output['navbar_site_name'] = isset( $input['navbar_site_name'] );
 	$output['navbar_site_name_content'] = esc_attr( $input['navbar_site_name_content'] );
 	$output['custom_style_site'] = $input['custom_style_site'] ;
+	foreach ($bootstrap_style as $t){
+		if($t['name']==$output['custom_style_site']){
+			$output['custom_bg_style_site']=$t['background_color'];
+		}
+	};
+
+	//$output['custom_bg_style_site']="abcdef";
+
+	
 	$output['navbar_searchform'] = isset( $input['navbar_searchform'] );
+
 	
 	if ( ! get_settings_errors() ) {
 		add_settings_error( 'the-bootstrap-options', 'settings_updated', sprintf( __( 'Settings saved. <a href="%s">Visit your site</a> to see how it looks.', 'the-bootstrap' ), home_url( '/' ) ), 'updated' );

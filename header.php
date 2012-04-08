@@ -30,7 +30,7 @@
 	
 	<body <?php body_class(); ?>>
 		<div class="container">
-			<div id="page" class="hfeed row">
+			<div id="page" class="hfeed row" style="background-color:<?php echo (the_bootstrap_get_theme_options()->custom_bg_style_site); ?>;">
 				<header id="branding" role="banner" class="span12">
 					<hgroup>
 						<h1 id="site-title">

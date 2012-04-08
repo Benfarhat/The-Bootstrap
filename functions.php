@@ -125,7 +125,12 @@ function the_bootstrap_register_scripts_styles() {
 		);
 				
 		/**
-		 * Styles
+		* Adding Custom Bootstrap Style
+		* @see http://bootswatch.com/
+		* Benfarhat elyes
+		 * for more style using less and bootstrap less files
+		 * @see https://github.com/twitter/bootstrap/blob/master/less/variables.less 
+		 * @see https://github.com/twitter/bootstrap/blob/master/less/variables.less
 		 */
 		 if($style=="bootstrap") 
 			 {
@@ -146,9 +151,8 @@ function the_bootstrap_register_scripts_styles() {
 					);
 			
 			 }
-		 else
+		 else // if we use custom bootswatch style
 			{
-			
 				$link_style="/css/".$style."/bootstrap{$suffix}.css";
 				wp_register_style(
 					'tw-bootstrap',
@@ -157,9 +161,16 @@ function the_bootstrap_register_scripts_styles() {
 					array(),
 					'2.0.2'
 				);
-			
+
+				wp_register_style(
+					'the-bootstrap',
+					get_template_directory_uri() . "/css/bootstrap-responsive.css",
+					array('tw-bootstrap'),
+					$theme_bootswatch_data['Version']
+				);
+	
 			 }
-		 
+			 
 
 
 	}

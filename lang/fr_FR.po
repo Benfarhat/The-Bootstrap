@@ -25,7 +25,7 @@ msgstr "C'est génant, n'est ce pas?"
 # @ the-bootstrap
 #: ../404.php:23
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help."
-msgstr ""
+msgstr "Il semblerait que nous ne puissions donner suite à votre requête. Une recherche ou l'un des liens ci dessous pourrait vous aider."
 
 # @ the-bootstrap
 #: ../404.php:30
@@ -36,7 +36,7 @@ msgstr "Catégorie la plus utilisée"
 #: ../404.php:44
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
+msgstr "Consulter l'archive mensuelle. %1$s"
 
 # @ the-bootstrap
 #: ../archive.php:28
@@ -59,56 +59,56 @@ msgstr "Archives annuelle: %s"
 # @ the-bootstrap
 #: ../archive.php:34
 msgid "Blog Archives"
-msgstr ""
+msgstr "Archives du blog"
 
 # @ the-bootstrap
 #: ../author.php:21
 #, php-format
 msgid "Author Archives: %s"
-msgstr ""
+msgstr "Archives de l'auteur: %s"
 
 # @ the-bootstrap
 #: ../author.php:29
 #, php-format
 msgid "About %s"
-msgstr ""
+msgstr "A propos de %s"
 
 # @ the-bootstrap
 #: ../category.php:21
 #, php-format
 msgid "Category Archives: %s"
-msgstr ""
+msgstr "Archives de catégorie: %s"
 
 # @ the-bootstrap
 #: ../comments.php:20
 msgid "This post is password protected. Enter the password to view any comments."
-msgstr ""
+msgstr "Cette publication est protégé par un mot de passe. Veuillez le rentrer pour voir les commentaire"
 
 # @ the-bootstrap
 #: ../comments.php:31
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Une pensée sur &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s thoughts on &ldquo;%2$s&rdquo;"
 
 # @ the-bootstrap
 #: ../comments.php:38
 #: ../comments.php:50
 msgid "Comment navigation"
-msgstr ""
+msgstr "Navigation dans les commentaires"
 
 # @ the-bootstrap
 #: ../comments.php:39
 #: ../comments.php:51
 msgid "&larr; Newer Comments"
-msgstr ""
+msgstr "&larr; Commentaires récents"
 
 # @ the-bootstrap
 #: ../comments.php:40
 #: ../comments.php:52
 msgid "Older Comments &rarr;"
-msgstr ""
+msgstr "Commentaires plus anciens &rarr;"
 
 # @ the-bootstrap
 #: ../comments.php:60
@@ -125,7 +125,7 @@ msgstr "commentaire"
 #: ../comments.php:65
 #, php-format
 msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: %s"
-msgstr ""
+msgstr "Vous pouvez utiliser les tags <abbr title=\"HyperText Markup Language\">HTML</abbr> et les attributs: %s"
 
 # @ the-bootstrap
 #: ../comments.php:67
@@ -149,7 +149,7 @@ msgstr "Vous devez vous <a href=\"%s\">enregistrer</a> pour poster un commentair
 #: ../comments.php:70
 #, php-format
 msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account\">Log out?</a>"
-msgstr ""
+msgstr "Connecter en tant que <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Vous deconnecter\">Deconnexion?</a>"
 
 # @ the-bootstrap
 #: ../footer.php:26
@@ -171,7 +171,7 @@ msgstr "%d requêtes en %s secondes"
 
 #: ../functions.php:57
 msgid "Header Menu"
-msgstr ""
+msgstr "Menu haut de site"
 
 # @ the-bootstrap
 #: ../functions.php:58
@@ -180,7 +180,7 @@ msgstr "Navigation principale"
 
 #: ../functions.php:59
 msgid "Footer Menu"
-msgstr ""
+msgstr "Menu bas de site"
 
 # @ the-bootstrap
 #: ../functions.php:79
@@ -190,13 +190,13 @@ msgstr "Sidebar principale"
 # @ the-bootstrap
 #: ../functions.php:88
 msgid "Image Sidebar"
-msgstr ""
+msgstr "Sidebar d'image"
 
 # @ the-bootstrap
 #: ../functions.php:247
 #, php-format
 msgid "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
-msgstr ""
+msgstr "<span class=\"sep\">Publié le </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> par </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 
 # @ the-bootstrap
 #: ../functions.php:253
@@ -258,7 +258,7 @@ msgstr "%1$s <span class=\"says\">a dit</span> sur %2$s:"
 #: ../functions.php:507
 #, php-format
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s à %2$s"
 
 # @ the-bootstrap
 #: ../functions.php:514
@@ -360,43 +360,43 @@ msgstr "Photo suivante &raquo;"
 #: ../search.php:20
 #, php-format
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "Résultats de recherche pour: %s"
 
 # @ the-bootstrap
 #: ../searchform.php:13
 msgid "Search"
-msgstr ""
+msgstr "Recherche"
 
 # @ the-bootstrap
 #: ../sidebar.php:14
 msgid "Archives"
-msgstr ""
+msgstr "Archives"
 
 # @ the-bootstrap
 #: ../sidebar.php:21
 msgid "Meta"
-msgstr ""
+msgstr "Meta"
 
 # @ the-bootstrap
 #: ../single.php:25
 msgid "Post navigation"
-msgstr ""
+msgstr "Navigation dans les billets"
 
 # @ the-bootstrap
 #: ../single.php:26
 msgid "<span class=\"meta-nav\">&larr;</span> Next Post"
-msgstr ""
+msgstr "<span class=\"meta-nav\">&larr;</span> Billet suivant"
 
 # @ the-bootstrap
 #: ../single.php:27
 msgid "Previous Post <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Biller précédent <span class=\"meta-nav\">&rarr;</span>"
 
 # @ the-bootstrap
 #: ../tag.php:21
 #, php-format
 msgid "Tag Archives: %s"
-msgstr ""
+msgstr "Archives des mots clés: %s"
 
 # @ the-bootstrap
 #: ../inc/the-bootstrap-image-meta-widget.php:27
@@ -432,22 +432,22 @@ msgstr "%s Pixels"
 # @ the-bootstrap
 #: ../inc/the-bootstrap-image-meta-widget.php:67
 msgid "Aperture:"
-msgstr ""
+msgstr "Ouverture:"
 
 # @ the-bootstrap
 #: ../inc/the-bootstrap-image-meta-widget.php:72
 msgid "Focal length:"
-msgstr ""
+msgstr "DIstance focale:"
 
 # @ the-bootstrap
 #: ../inc/the-bootstrap-image-meta-widget.php:77
 msgid "Iso:"
-msgstr ""
+msgstr "Sensibilité ISO:"
 
 # @ the-bootstrap
 #: ../inc/the-bootstrap-image-meta-widget.php:82
 msgid "Shutter:"
-msgstr ""
+msgstr "Obturateur:"
 
 # @ the-bootstrap
 #: ../inc/the-bootstrap-image-meta-widget.php:101
@@ -470,12 +470,12 @@ msgstr[1] "Cette galerie contient<strong>%1$s photos</strong>."
 #: ../partials/content-gallery.php:72
 msgctxt "carousel-control"
 msgid "&lsaquo;"
-msgstr ""
+msgstr "&lsaquo;"
 
 #: ../partials/content-gallery.php:73
 msgctxt "carousel-control"
 msgid "&rsaquo;"
-msgstr ""
+msgstr "&rsaquo;"
 
 # @ the-bootstrap
 #: ../partials/content-no-results.php:14
@@ -497,7 +497,7 @@ msgstr "Désolé, mais il n'y a pas de résultat dans l'archive, Nous vous conse
 #: ../partials/content.php:47
 #, php-format
 msgid "Posted in %1$s."
-msgstr ""
+msgstr "Posté dans %1$s."
 
 # @ the-bootstrap
 #: ../partials/content-single.php:30
@@ -505,21 +505,21 @@ msgstr ""
 #: ../partials/content.php:48
 msgctxt "used between list items, there is a space after the comma"
 msgid ", "
-msgstr ""
+msgstr ", "
 
 # @ the-bootstrap
 #: ../partials/content-single.php:33
 msgid "Tagged "
-msgstr ""
+msgstr "Etiquetés"
 
 # @ the-bootstrap
 #: ../partials/content-single.php:47
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Voir tous les billets par %s <span class=\"meta-nav\">&rarr;</span>"
 
 # @ the-bootstrap
 #: ../partials/content.php:17
 msgid "Featured"
-msgstr ""
+msgstr "En vedette"
 

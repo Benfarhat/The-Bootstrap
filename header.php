@@ -28,7 +28,7 @@
 		<?php wp_head(); ?>
 	</head>
 	
-	<body <?php body_class(); ?>>
+	<body <?php body_class(); echo " ".the_bootstrap_get_theme_options()->theme_layout;?>>
 		<div class="container">
 			<div id="page" class="hfeed row" style="background-color:<?php echo (the_bootstrap_get_theme_options()->custom_bg_style_site); ?>;">
 				<header id="branding" role="banner" class="span12">
